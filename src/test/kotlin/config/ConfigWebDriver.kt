@@ -1,14 +1,26 @@
 package config
 
-import com.codeborne.selenide.Configuration
-import io.github.bonigarcia.wdm.FirefoxDriverManager
-import org.junit.BeforeClass
 
-open class ConfigWebDriver {
+/*
+package ui
+
+import com.codeborne.selenide.Configuration
+import io.github.bonigarcia.wdm.ChromeDriverManager
+import org.testng.annotations.BeforeClass
+
+open class Base {
     @BeforeClass
-    open fun setUp() {
-        FirefoxDriverManager.getInstance().setup()
+    fun setUp(){
+        ChromeDriverManager.getInstance().setup()
         Configuration.browser = "chrome"
-        Configuration.baseUrl = "http://demo.vaadin.com/AddressBook/"
+        Configuration.baseUrl = "http://yandex.ru"
+    }
+    protected MailPage login(){
+        val user = new user(name "utopia.cosmica@yandex.ru", password "testfortest")
+        return new MailPage()
+                .open()
+                .loginAs(user)
     }
 }
+*/
+

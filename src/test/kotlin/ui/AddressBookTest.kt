@@ -2,22 +2,27 @@ package ui
 
 import com.codeborne.selenide.SelenideElement
 import org.junit.After
-import org.junit.Before
-import org.junit.Test
-import config.ConfigWebDriver
+
 import com.codeborne.selenide.CollectionCondition.size
 import com.codeborne.selenide.CollectionCondition.texts
 import com.codeborne.selenide.Condition.appears
 import com.codeborne.selenide.Condition.visible
+import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selectors.byText
 import com.codeborne.selenide.Selenide.*
+import com.codeborne.selenide.WebDriverProvider
+import com.codeborne.selenide.WebDriverRunner
+import io.github.bonigarcia.wdm.FirefoxDriverManager
+import org.junit.Before
+import org.junit.Test
 
-class AddressBookTest : ConfigWebDriver(){
-
+class AddressBookTest {
     @Before
-    override fun setUp() {
+    fun setUp() {
+        FirefoxDriverManager.getInstance().version("v0.15.0").arch64().setup()
         open("http://demo.vaadin.com/AddressBook/")
     }
+
 
     @Test
     fun showsContacts() {
