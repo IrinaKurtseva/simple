@@ -20,6 +20,7 @@ class AddressBookTest {
     @Before
     fun setUp() {
         FirefoxDriverManager.getInstance().version("v0.15.0").arch64().setup()
+        Configuration.browserVersion = "firefox"
         open("http://demo.vaadin.com/AddressBook/")
     }
 
